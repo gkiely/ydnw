@@ -1,0 +1,88 @@
+.font-modern
+  .gray-black
+    %header.header
+      .container-lrg
+        .flex.col-12.spread
+          = link_to("YDNW", root_path, class: "logo primary-color logo")
+          %a.nav-link.secondary-color.mr0{:href => "mailto:"} Contact
+    %section.section
+      .container.mb40
+        .col-12.text-center
+          %h1.heading-lrg.primary-color You Don't Need Wordpress
+          %h4.heading-md.primary-color Create A Blog With Only Google Docs
+          .mt40
+            %a.button.mobile-text-center.mt10.mobile-text-center.accent-bg.primary-color{:href => "", :target => "_blank"}
+              %span Create Your Blog
+      .container-lrg
+        .col-12
+          .browser.mt75
+            .mask
+              = image_tag("main-image.png", class: "mask-img", alt: "Screenshot of App in Browser")
+  %section#feature-1.section.gray-flat{:activepage => "Landing", :sitemeta => "[object Object]"}
+    .container
+      .col-12.text-center.flex.flex-column.center-horizontal
+        %i.icon.secondary-bg.mobile-center-icon
+          %svg.svg-fill{:viewbox => "0 0 25 25", :xmlns => "http://www.w3.org/2000/svg"}
+            %path{:d => "M20 22.494v1a.5.5 0 0 1-1 0v-1a.5.5 0 1 1 1 0zm-14.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-.5-.5zm7 1a10.924 10.924 0 0 1-2.494-.391l-.27 1.76a.528.528 0 0 0 .097.454.498.498 0 0 0 .387.183h4.56a.5.5 0 0 0 .49-.598l-.275-1.8a10.928 10.928 0 0 1-2.495.392zm9.06-7.44L18 11.995v9h2.5a1.5 1.5 0 0 0 1.5-1.5v-2.879a1.5 1.5 0 0 0-.44-1.06zM17 5.995v15a18.472 18.472 0 0 1-4 .974v-7.474a.5.5 0 0 0-1 0v7.474a18.47 18.47 0 0 1-4-.974v-15C8 3.67 11.553.244 12.5 0c.947.244 4.5 3.67 4.5 5.994zm-2.168 1.127A4.374 4.374 0 0 0 12.5 5.994a4.113 4.113 0 0 0-2.343 1.136.5.5 0 0 0 .686.729 3.213 3.213 0 0 1 1.657-.865 3.417 3.417 0 0 1 1.668.874.5.5 0 0 0 .664-.748zM3 16.614v2.88a1.5 1.5 0 0 0 1.5 1.5H7v-9l-3.56 3.56a1.5 1.5 0 0 0-.44 1.06z"}
+        %h3.heading.primary-color All The Great Features of Google Docs
+        %p.subheading.secondary-color.mt20 Sharing, revisions, etc etc
+    .container-lrg
+      .col-12.flex
+        .computer
+          .mask
+            = image_tag("secondary-image.png", class: "mask-img", alt: "Screenshot of App in Browser")
+          .computer-bottom
+  %footer#footer-2.section.text-center.gray-white{:activepage => "Landing", :sitemeta => "[object Object]"}
+    .container.col-12
+      %div
+        %a.socialicons.accent-bg.email{:href => "mailto:patrickswalls@gmail.com"}
+        %a.socialicons.accent-bg.twitter{:href => "https://twitter.com/thepatwalls", :target => "_blank"}
+  %section#pricing-3.section.gray-white{:activepage => "Landing", :sitemeta => "[object Object]"}
+    .container.text-center
+      .col-12
+        %h4.heading.primary-color Pricing
+        %p.paragraph.secondary-color.mt20
+    .container.mt75
+      .col-12
+        .card.flex.mobile-flex-wrap
+          .col-6.flex.flex-column.spread.pad30
+            .mb20
+              %p.bold.primary-color Free
+              %b.heading.primary-color $0
+              %span.paragraph.secondary-color Monthly
+              %ul.mt20
+                %li.flex.mb20
+                  %svg.svg-fill.noshrink.mr20{:height => "22px", :version => "1.1", :viewbox => "0 0 22 22", :width => "22px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+                    %g{:transform => "translate(4.000000, 5.000000)"}
+                      %path{:d => "M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"}
+                  %span.span.secondary-color Unlimited Launchaco Websites
+                %li.flex.mb20
+                  %svg.svg-fill.noshrink.mr20{:height => "22px", :version => "1.1", :viewbox => "0 0 22 22", :width => "22px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+                    %g{:transform => "translate(4.000000, 5.000000)"}
+                      %path{:d => "M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"}
+                  %span.span.secondary-color Unlimited Launchaco Websites
+            %a.button.mobile-text-center.mt10.button__full.mobile-text-center.accent-bg.primary-color{:href => "http://placeholderlink", :target => "_blank"}
+              %span placeholder
+          .col-6.flex.flex-column.spread.pad30
+            .mb20
+              %p.bold.primary-color Pro
+              %b.heading.primary-color $14.99
+              %span.paragraph.secondary-color Monthly
+              %ul.mt20
+                %li.flex.mb20
+                  %svg.svg-fill.noshrink.mr20{:height => "22px", :version => "1.1", :viewbox => "0 0 22 22", :width => "22px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+                    %g{:transform => "translate(4.000000, 5.000000)"}
+                      %path{:d => "M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"}
+                  %span.span.secondary-color Unlimited Launchaco Websites
+                %li.flex.mb20
+                  %svg.svg-fill.noshrink.mr20{:height => "22px", :version => "1.1", :viewbox => "0 0 22 22", :width => "22px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+                    %g{:transform => "translate(4.000000, 5.000000)"}
+                      %path{:d => "M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"}
+                  %span.span.secondary-color Unlimited Launchaco Websites
+                %li.flex.mb20
+                  %svg.svg-fill.noshrink.mr20{:height => "22px", :version => "1.1", :viewbox => "0 0 22 22", :width => "22px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+                    %g{:transform => "translate(4.000000, 5.000000)"}
+                      %path{:d => "M5.24961475,8.39956394 L2.16512063,5.35475362 C1.74038521,4.93548271 1.05017933,4.9352057 0.624646383,5.35526395 C0.199019838,5.77541456 0.198881924,6.45614266 0.624129379,6.8759191 L4.35212111,10.555948 C4.38658274,10.6034965 4.42544251,10.6488955 4.46870038,10.6915969 C4.70907746,10.9288814 5.03375662,11.0320952 5.3475228,11.0013023 C5.59592563,10.9812599 5.83876209,10.8774981 6.02880771,10.6898975 C6.06831079,10.6509027 6.10414872,10.6096632 6.13632157,10.5665961 L13.9850992,2.81879759 C14.4107939,2.39857976 14.410861,1.71746456 13.985328,1.29740632 C13.5597015,0.8772557 12.8697673,0.877449143 12.444108,1.29763217 L5.24961475,8.39956394 Z"}
+                  %span.span.secondary-color Unlimited Launchaco Websites
+            %a.button.mobile-text-center.mt10.button__full.mobile-text-center.accent-bg.primary-color{:href => "http://placeholderlink", :target => "_blank"}
+              %span placeholder
