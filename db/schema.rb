@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_22_160159) do
+ActiveRecord::Schema.define(version: 2018_09_22_195339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_09_22_160159) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "google_doc"
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,6 +32,11 @@ ActiveRecord::Schema.define(version: 2018_09_22_160159) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "google_auth_token"
+    t.string "google_refresh_token"
+    t.datetime "google_expires_at"
+    t.string "folder"
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

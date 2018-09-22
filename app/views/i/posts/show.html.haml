@@ -1,0 +1,8 @@
+.page
+  .content
+    .bio
+      = image_tag(Avatar.new(@user).get)
+    .article
+      .header
+        %h1= @post.title
+      = raw @parsed.html_safe

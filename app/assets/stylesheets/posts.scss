@@ -1,3 +1,21 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.page {
+  display: flex;
+  justify-content: center;
+
+  .content {
+    width: 700px;
+
+    img, span {
+      height: auto !important;
+      width: auto !important;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 95%;
+    }
+  }
+}

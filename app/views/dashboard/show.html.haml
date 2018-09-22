@@ -1,6 +1,8 @@
 .content
   .dashboard
     %h1 My posts
+    = link_to("Sign Out", destroy_user_session_path, method: :delete)
+    = link_to("Create A Blog Post!", posts_path, method: :post)
 
     %ul
     - @posts.each do |post|

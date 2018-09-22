@@ -4,4 +4,9 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [:show], controller: 'dashboard'
   resources :posts
+
+  get '/:username/:post_id', to: 'i/posts#show'
+
+  get '/google_drive_authorize' => 'google_drive#authorize', as: 'google_drive_authorize'
+  get '/callback' => 'google_drive#callback', as: 'callback'
 end
