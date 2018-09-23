@@ -10,7 +10,7 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    - Rails.env.production?
+    - if Rails.env.production?
       %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-75503228-5"}
       :javascript
         window.dataLayer = window.dataLayer || [];
