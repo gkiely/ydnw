@@ -1,6 +1,9 @@
 %script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
 
-%footer.footer{ style: "position: fixed;bottom: 0;"}
+%footer.footer
   = link_to("YDNW", root_path)
   = link_to("Contact Us", "mailto:patrickswalls@gmail.com")
-  %a.twitter-follow-button{"data-show-count" => "false", :href => "https://twitter.com/thepatwalls?ref_src=twsrc%5Etfw"} Follow @thepatwalls
+  .div
+    I created this on a
+    = link_to("24 hour live stream!", "https://twitter.com/thepatwalls/status/1043242997050167302")
+    %a.twitter-follow-button{"data-show-count" => "false", :href => "https://twitter.com/thepatwalls?ref_src=twsrc%5Etfw"} Follow @thepatwalls
