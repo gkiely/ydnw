@@ -1,3 +1,5 @@
+- set_meta_tags_for_index(@user)
+
 .page.index
   .content
     .index-bio
@@ -6,7 +8,6 @@
         %h4= @user.bio
       .index-bio__right
         = image_tag(Avatar.new(@user.email).get)
-
 
   .posts
     - @posts.published.each do |post|
