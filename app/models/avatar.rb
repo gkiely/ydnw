@@ -4,10 +4,14 @@ class Avatar
   end
 
   def get
-    req = RestClient.get("http://picasaweb.google.com/data/entry/api/user/#{@email}?alt=json")
+    begin
+      req = RestClient.get("http://picasaweb.google.com/data/entry/api/user/#{@email}?alt=json")
 
-    data = JSON.parse(req)
+      data = JSON.parse(req)
 
-    data.dig("entry","gphoto$thumbnail","$t")
+      data.dig("entry","gphoto$thumbnail","$t")
+    rescue => e
+      ""
+    end
   end
 end

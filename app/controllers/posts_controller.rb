@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     file = GoogleDrive.new(current_user).create_file!
 
@@ -7,7 +9,7 @@ class PostsController < ApplicationController
       google_doc: file.id
     )
 
-    redirect_to dashboard_path
+    redirect_to user_root_path
   end
 
   def show
@@ -35,10 +37,10 @@ class PostsController < ApplicationController
 
     if @post.destroy!
       flash[:success] = "Post updated!"
-      redirect_to dashboard_path
+      redirect_to user_root_path
     else
       flash[:error] = "something went wrong"
-      redirect_to dashboard_path
+      redirect_to user_root_path
     end
   end
 

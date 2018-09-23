@@ -1,6 +1,8 @@
 require 'google/apis/drive_v2'
 
 class GoogleDriveController < ApplicationController
+  before_action :authenticate_user!
+
   def authorize
     client = OAuth2::Client.new(
                ENV['GOOGLE_CLIENT_ID'],
@@ -33,7 +35,7 @@ class GoogleDriveController < ApplicationController
 
     create_folder_in_google_drive! if user.folder.nil?
 
-    redirect_to dashboard_path
+    redirect_to user_root_path
   end
 
   def create_folder_in_google_drive!
