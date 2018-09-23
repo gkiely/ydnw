@@ -36,7 +36,7 @@ module ApplicationHelper
       og: {
         title: "#{user.name} - You Don't Need WordPress",
         description: "Check out posts by #{user.name}",
-        url: "https://www.youdontneedwp.com/#{post.user.username}"
+        url: "https://www.youdontneedwp.com/#{user.username}"
       }
     )
   end
