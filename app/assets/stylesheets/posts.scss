@@ -21,6 +21,10 @@
       width: auto !important;
     }
 
+    p {
+      word-wrap: break-word;
+    }
+
     @media screen and (max-width: 400px) {
       width: 95%;
     }
