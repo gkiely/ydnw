@@ -10,7 +10,15 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %link{:href => "https://fonts.googleapis.com/css?family=Lora", :rel => "stylesheet"}/
+    - Rails.env.production?
+      %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-75503228-5"}
+      :javascript
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-75503228-5');
+
   %body
     .font-modern
       .gray-black
