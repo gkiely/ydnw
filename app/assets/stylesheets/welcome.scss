@@ -600,6 +600,8 @@ img {
 .gray-black {
   background-color: #E7E8E9;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .gray-black .secondary-bg { background-color: #C4C8D4 }
 .gray-black .accent-bg { background-color: #443B55 }
@@ -616,10 +618,11 @@ img {
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 10px;
 }
 
 .header {
