@@ -15,5 +15,9 @@ module Ydnw
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    Raven.configure do |config|
+      config.dsn = 'https://3286d54592144330be6af85fd527f76b:59774be85b094b60a21f2b98f3dd2e2a@sentry.io/1286413'
+    end
   end
 end
