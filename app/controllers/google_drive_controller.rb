@@ -23,8 +23,6 @@ class GoogleDriveController < ApplicationController
               :access_type => 'offline'
             )
 
-    byebug
-
     token = client.auth_code.get_token(params[:code], :redirect_uri => callback_url)
 
     user.update!(

@@ -7,7 +7,14 @@
   justify-content: center;
 
   .content {
-    width: 700px;
+    margin-top: 40px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    box-shadow: 0 1px 1px 0 rgba(11, 13, 39, 0.07), 0 2px 4px 0 rgba(9, 12, 36, 0.11);
+    border-radius: 5px;
 
     img, span {
       height: auto !important;
@@ -16,6 +23,41 @@
 
     @media screen and (max-width: 400px) {
       width: 95%;
+    }
+
+    .index-bio {
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .bio {
+      display: flex;
+
+      .name {
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      img {
+        border-radius: 50%;
+      }
+
+      .bio-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 20px;
+      }
+    }
+
+    .article {
+      .header {
+        margin-bottom: 20px;
+      }
     }
   }
 }

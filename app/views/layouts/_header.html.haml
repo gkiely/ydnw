@@ -2,4 +2,7 @@
   .container-lrg
     .flex.col-12.spread
       = link_to("YDNW", root_path, class: "logo primary-color logo")
-      = link_to("Sign Up", new_user_registration_path, class: "nav-link secondary-color mr0")
+      - if current_user
+        = link_to("Sign Out", destroy_user_session_path, method: :delete)
+      - else
+        = link_to("Sign In", new_user_session_path, class: "nav-link secondary-color mr0")

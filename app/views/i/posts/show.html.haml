@@ -1,7 +1,12 @@
 .page
   .content
     .bio
-      = image_tag(Avatar.new(@user).get)
+      .bio-left
+        = image_tag(Avatar.new(@user.email).get)
+      .bio-right
+        .name= @user.name
+        .bio-description= @user.bio
+        .published= @post.published
     .article
       .header
         %h1= @post.title

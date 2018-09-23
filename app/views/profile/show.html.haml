@@ -1,0 +1,13 @@
+.profile
+  %h4 Edit Profile
+  = form_tag(user_path(current_user), method: "PATCH") do
+    .form-group
+      = label_tag(:user, "Name")
+      = text_field(:user, :name, class: "form-control", value: current_user.name)
+    .form-group
+      = label_tag(:user, "Username")
+      = text_field(:user, :username, class: "form-control", value: current_user.username)
+    .form-group
+      = label_tag(:user, "Bio")
+      = text_field(:user, :bio, class: "form-control", value: current_user.bio)
+    = submit_tag("Update Profile", class: "btn btn-primary")

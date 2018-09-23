@@ -8,8 +8,12 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://fonts.googleapis.com/css?family=Lora", :rel => "stylesheet"}/
   %body
     .font-modern
       .gray-black
         = render "layouts/header"
+        - flash.each do |key, value|
+          = content_tag :div, value, class: "alert alert-info"
         = yield
+        = render "layouts/footer"

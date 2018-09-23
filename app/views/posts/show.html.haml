@@ -1,3 +1,7 @@
 %h1 This is a post!
 
+= link_to "Edit Post", edit_post_path(@post)
+
+= link_to "Delete Post", post_path(@post), method: :delete
+
 = link_to "Google Doc", "https://docs.google.com/document/d/#{@post.google_doc}/edit"

@@ -597,7 +597,10 @@ img {
 .gray-accent .secondary-color { color: #E8E7EA }
 .gray-accent .svg-fill { fill: #FFFFFF }
 
-.gray-black { background-color: #E7E8E9 }
+.gray-black {
+  background-color: #E7E8E9;
+  min-height: 100vh;
+}
 .gray-black .secondary-bg { background-color: #C4C8D4 }
 .gray-black .accent-bg { background-color: #443B55 }
 .gray-black .primary-color { color: #000000 }

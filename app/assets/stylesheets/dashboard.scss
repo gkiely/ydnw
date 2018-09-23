@@ -5,4 +5,23 @@
 .content {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+
+  .dashboard {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .posts {
+
+    .media-body {
+      margin-bottom: 20px
+    }
+
+    ul {
+      list-style: none;
+    }
+  }
 }

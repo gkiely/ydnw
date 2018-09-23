@@ -1,9 +1,17 @@
 .content
   .dashboard
-    %h1 My posts
-    = link_to("Sign Out", destroy_user_session_path, method: :delete)
-    = link_to("Create A Blog Post!", posts_path, method: :post)
-
-    %ul
-    - @posts.each do |post|
-      = link_to(post.title, post_path(post.id))
+    %h4 My posts
+    = link_to("➕ New Blog Post", posts_path, method: :post, class: "btn btn-primary")
+  .posts
+    %ul.list-unstyled
+      - @posts.each do |post|
+        %li.media
+          -# %img.mr-3{:alt => "Generic placeholder image", :src => "..."}/
+          .media-body
+            %h5.mt-0.mb-1= post.title
+            %ul
+              %li= link_to "Google Doc", "https://docs.google.com/document/d/#{post.google_doc}/edit"
+              %li= link_to "View Post", "#{current_user.username}/#{post.id}"
+              %li= link_to "Edit Post", edit_post_path(post)
+              %li= link_to "Delete Post", post_path(post), method: :delete
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.

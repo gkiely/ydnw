@@ -30,9 +30,21 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+
+    if @post.destroy!
+      flash[:success] = "Post updated!"
+      redirect_to dashboard_path
+    else
+      flash[:error] = "something went wrong"
+      redirect_to dashboard_path
+    end
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:title, :published)
+    params.require(:post).permit(:title, :published, :is_published)
   end
 end

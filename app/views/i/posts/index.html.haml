@@ -1,0 +1,12 @@
+.page
+  .content
+    .index-bio
+      .index-bio__left
+        %h1= "Pat Walls"
+        %h4= "This is my bio"
+      .index-bio__right
+        = image_tag(Avatar.new(@user.email).get)
+
+    .posts
+      - @posts.published.each do |post|
+        %h1= post.title

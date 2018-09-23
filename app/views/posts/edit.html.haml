@@ -1,6 +1,13 @@
-= form_tag(post_path(@post), method: "PATCH") do
-  = label_tag(:title, "Title")
-  = text_field(:post, :title)
-  = label_tag(:date, "Published")
-  = date_field(:post, :published)
-  = submit_tag("Update")
+.profile
+  %h4 Edit Post
+  = form_tag(post_path(@post), method: "PATCH") do
+    .form-group
+      = label_tag(:title, "Title")
+      = text_field(:post, :title, class: "form-control")
+    .form-group
+      = label_tag(:date, "Date")
+      = date_field(:post, :published, class: "form-control")
+    .form-group
+      = label_tag(:date, "Published")
+      = check_box(:post, :is_published, class: "form-control")
+    = submit_tag("Update", class: "btn btn-primary")
