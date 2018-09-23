@@ -1,8 +1,6 @@
 %script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
 
-%footer.footer
-  .container-lrg
-    .flex.col-12.spread
-      = link_to("YDNW", root_path)
-      = link_to("Contact Us", "mailto:patrickswalls@gmail.com")
-      %a.twitter-follow-button{"data-show-count" => "false", :href => "https://twitter.com/thepatwalls?ref_src=twsrc%5Etfw"} Follow @thepatwalls
+%footer.footer{ style: "position: absolute;bottom: 0;"}
+  = link_to("YDNW", root_path)
+  = link_to("Contact Us", "mailto:patrickswalls@gmail.com")
+  %a.twitter-follow-button{"data-show-count" => "false", :href => "https://twitter.com/thepatwalls?ref_src=twsrc%5Etfw"} Follow @thepatwalls

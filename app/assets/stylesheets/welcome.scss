@@ -613,3 +613,19 @@ img {
 .gray-white .primary-color { color: #000000 }
 .gray-white .secondary-color { color: #8F8F8F }
 .gray-white .svg-fill { fill: #b6bac7 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.header {
+  .links {
+    a {
+      margin-left: 10px;
+    }
+  }
+}

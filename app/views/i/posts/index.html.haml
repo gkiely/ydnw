@@ -2,11 +2,12 @@
   .content
     .index-bio
       .index-bio__left
-        %h1= "Pat Walls"
-        %h4= "This is my bio"
+        %h1= @user.name
+        %h4= @user.bio
       .index-bio__right
         = image_tag(Avatar.new(@user.email).get)
 
     .posts
       - @posts.published.each do |post|
-        %h1= post.title
+        .post
+          = link_to(post.title)

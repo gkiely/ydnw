@@ -13,7 +13,7 @@ class GoogleDrive
     drive.authorization = get_auth_token
 
     metadata_fields = {
-      title: 'A test for the folder',
+      title: 'My new blog post',
       mime_type: 'application/vnd.google-apps.document',
       parents: [{ id: @user.folder }]
     }

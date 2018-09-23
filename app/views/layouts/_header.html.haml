@@ -1,8 +1,13 @@
+- logo_path = current_user ? user_root_path : root_path
+
 %header.header
   .container-lrg
     .flex.col-12.spread
-      = link_to("YDNW", root_path, class: "logo primary-color logo")
+      = link_to("YDNW", logo_path, class: "logo primary-color logo")
       - if current_user
-        = link_to("Sign Out", destroy_user_session_path, method: :delete)
+        .links
+          = link_to("Profile", profile_path)
+          = link_to("My Posts", user_root_path)
+          = link_to("Sign Out", destroy_user_session_path, method: :delete)
       - else
         = link_to("Sign In", new_user_session_path, class: "nav-link secondary-color mr0")
