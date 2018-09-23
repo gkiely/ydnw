@@ -6,6 +6,10 @@
   display: flex;
   justify-content: center;
 
+  &.index {
+    flex-direction: column;
+  }
+
   .content {
     margin-top: 40px;
     background-color: white;

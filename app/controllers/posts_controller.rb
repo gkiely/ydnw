@@ -6,7 +6,8 @@ class PostsController < ApplicationController
 
     current_user.posts.create(
       title: "My new post.",
-      google_doc: file.id
+      google_doc: file.id,
+      published: Date.today
     )
 
     redirect_to user_root_path

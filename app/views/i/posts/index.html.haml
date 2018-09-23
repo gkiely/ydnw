@@ -1,4 +1,4 @@
-.page
+.page.index
   .content
     .index-bio
       .index-bio__left
@@ -7,7 +7,11 @@
       .index-bio__right
         = image_tag(Avatar.new(@user.email).get)
 
-    .posts
-      - @posts.published.each do |post|
+
+  .posts
+    - @posts.published.each do |post|
+      .content
         .post
-          = link_to(post.title)
+          .date
+            = post.published&.strftime("%m/%d/%Y")
+          = link_to(post.title, "#{@user.username}/#{post.id}")
