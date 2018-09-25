@@ -21,6 +21,10 @@
 }
 .header {
 	padding-top: 40px;
+
+  @media screen and (max-width: 400px) {
+    padding-top: 10px;
+  }
 }
 .logo {
   font-size: calc(120% + 1vw);
@@ -602,6 +606,7 @@ img {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .gray-black .secondary-bg { background-color: #C4C8D4 }
 .gray-black .accent-bg { background-color: #443B55 }
@@ -627,6 +632,8 @@ img {
 
 .header {
   .links {
+    display: flex;
+    align-items: center;
     a {
       margin-left: 10px;
     }

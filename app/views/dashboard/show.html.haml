@@ -1,16 +1,21 @@
-.content
-  .dashboard
-    %h4 My posts
-    = link_to("➕ New Blog Post", posts_path, method: :post, class: "btn btn-primary")
-  .posts
-    %ul.list-unstyled
-      - @posts.each do |post|
-        - state = post.is_published? ? "Published" : "Draft"
-        %li.media
-          .media-body
-            %h5.mt-0.mb-1= "#{post.title} (#{state})"
-            %ul
-              %li= link_to "Google Doc", "https://docs.google.com/document/d/#{post.google_doc}/edit"
-              %li= link_to "View #{state}", "#{current_user.username}/#{post.id}"
-              %li= link_to "Edit Post / Publish", edit_post_path(post)
-              %li= link_to "Delete Post", post_path(post), method: :delete
+.page
+  .content
+    .dashboard
+      %h4 My posts
+      .buttons
+        = link_to("Edit Profile", profile_path, class: "btn btn-secondary")
+        = link_to("➕ New Blog Post", posts_path, method: :post, class: "btn btn-primary")
+    .posts
+      %ul.list-unstyled
+        - if @posts.none?
+          Looks like you haven't created a post yet. Click the blue button over there 👉
+        - @posts.each do |post|
+          - state = post.is_published? ? "Published" : "Draft"
+          %li.media
+            .media-body
+              %h5.mt-0.mb-1= "#{post.title} (#{state})"
+              %ul
+                %li= link_to "Google Doc", "https://docs.google.com/document/d/#{post.google_doc}/edit"
+                %li= link_to "View Blog Post", "#{current_user.username}/#{post.id}"
+                %li= link_to "Edit Post / Publish", edit_post_path(post)
+                %li= link_to "Delete Post", post_path(post), method: :delete

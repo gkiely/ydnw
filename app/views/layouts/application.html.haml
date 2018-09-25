@@ -25,5 +25,6 @@
         = render "layouts/header"
         - flash.each do |key, value|
           = content_tag :div, value, class: "alert alert-info"
-        = yield
+        .midsection{ style: "min-height:80vh;"}
+          = yield
         = render "layouts/footer"

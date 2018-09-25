@@ -4,6 +4,10 @@
   .content
     .index-bio
       .index-bio__left
+        - if current_user && @user.name.blank?
+          .tip
+            Edit your bio
+            = link_to("here.", profile_path)
         %h1= @user.name
         %h4= @user.bio
       .index-bio__right
