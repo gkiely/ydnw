@@ -6,7 +6,7 @@
       = link_to("YDNW", logo_path, class: "logo primary-color logo")
       - if current_user
         .links
-          = link_to("My Blog", "#{current_user.username}")
+          = link_to("My Blog", "/#{current_user.username}")
           = link_to("Dashboard", user_root_path)
           = link_to("Sign Out", destroy_user_session_path, method: :delete)
       - else
