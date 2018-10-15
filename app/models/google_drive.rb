@@ -24,7 +24,6 @@ class GoogleDrive
 
   def get_html(post)
     return '<div>hello world</div>' if Rails.configuration.fake_html
-    # html_from_file = RestClient.get("https://www.googleapis.com/drive/v2/files/#{story.google_doc_id}/export?mimeType=text/html", {:Authorization => "Bearer #{get_auth_token}", :content_type => "application/json" })
 
     drive = Google::Apis::DriveV2::DriveService.new
     drive.authorization = get_auth_token
