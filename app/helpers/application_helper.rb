@@ -11,7 +11,7 @@ module ApplicationHelper
     )
   end
 
-  def set_meta_tags_for_post(post, description)
+  def set_meta_tags_for_post(post, description, img)
     set_meta_tags(
       title: post.title,
       description: description,
@@ -19,7 +19,8 @@ module ApplicationHelper
         title: post.title,
         description: post.title,
         url: "https://www.youdontneedwp.com/#{post.user.username}/#{post.id}",
-        type: "article"
+        type: "article",
+        image: [{ _: img}]
       },
       article: {
         published_time: post.published&.to_time&.iso8601,
