@@ -2,13 +2,7 @@
 
 .page
   .content
-    .bio
-      .bio-left
-        = image_tag(Avatar.new(@user.email).get)
-      .bio-right
-        .name= @user.name
-        .bio-description= @user.bio
-        .published= @post.published
+    = render "bio", user: @user
     .article
       .header
         %h1= @post.title

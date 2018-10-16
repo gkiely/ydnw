@@ -12,4 +12,10 @@
         .form-group
           = label_tag(:user, "Bio")
           = text_field(:user, :bio, class: "form-control", value: current_user.bio)
+        .form-group
+          = label_tag(:user, "Twitter")
+          = text_field(:user, :twitter, class: "form-control", value: current_user.twitter)
+        .form-group
+          = label_tag(:user, "Instagram")
+          = text_field(:user, :instagram, class: "form-control", value: current_user.instagram)
         = submit_tag("Update Profile", class: "btn btn-primary")

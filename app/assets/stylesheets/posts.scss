@@ -40,6 +40,21 @@
       img {
         border-radius: 50%;
       }
+
+      .index-bio__right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          margin-bottom: 10px;
+        }
+
+        i {
+          font-size: 25px;
+          margin-bottom: 5px;
+        }
+      }
     }
 
     .bio {

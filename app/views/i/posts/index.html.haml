@@ -2,16 +2,7 @@
 
 .page.index
   .content
-    .index-bio
-      .index-bio__left
-        - if current_user && @user.name.blank?
-          .tip
-            Edit your bio
-            = link_to("here.", profile_path)
-        %h1= @user.name
-        %h4= @user.bio
-      .index-bio__right
-        = image_tag(Avatar.new(@user.email).get)
+    = render "bio", user: @user
 
   .posts
     - @posts.published.each do |post|
