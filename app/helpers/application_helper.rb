@@ -11,10 +11,10 @@ module ApplicationHelper
     )
   end
 
-  def set_meta_tags_for_post(post)
+  def set_meta_tags_for_post(post, description)
     set_meta_tags(
       title: post.title,
-      description: post.title,
+      description: description,
       og: {
         title: post.title,
         description: post.title,

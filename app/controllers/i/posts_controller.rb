@@ -13,5 +13,6 @@ class I::PostsController < ApplicationController
     @post = @user.posts.find(params[:post_id])
     html = GoogleDrive.new(@user).get_html(@post)
     @parsed = Nokogiri::HTML::DocumentFragment.parse(html).to_html
+    @text_of_post = Nokogiri::HTML(@parsed).text
   end
 end
