@@ -3,7 +3,7 @@ class I::PostsController < ApplicationController
     @user = User.find_by(username: params[:username])
     return redirect_to root_path unless @user
 
-    @posts = @user.posts
+    @posts = @user.posts.most_recent_first
   end
 
   def show
