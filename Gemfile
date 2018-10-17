@@ -58,6 +58,8 @@ gem 'meta-tags'
 
 gem 'font-awesome-rails'
 
+gem 'sendgrid-ruby'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -75,6 +77,7 @@ group :development do
   gem "letter_opener"
   gem 'spring-commands-rspec'
   gem 'binding_of_caller'
+  gem "letter_opener"
 end
 
 group :test do
