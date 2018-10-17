@@ -1,15 +1,15 @@
 .index-bio
   .index-bio__left
-    - if current_user && user.name.blank?
-      .tip
-        Edit your bio
-        = link_to("here.", profile_path)
-    %h4= user.name
-    %h6= user.bio
-  .index-bio__right
     = image_tag(Avatar.new(user.email).get)
     - if user.instagram.present?
       = link_to "https://instagram.com/#{user.instagram}" do
         = fa_icon "instagram"
       = link_to "https://twitter.com/#{user.twitter}" do
         = fa_icon "twitter"
+  .index-bio__right
+    - if current_user && user.name.blank?
+      .tip
+        Edit your bio
+        = link_to("here.", profile_path)
+    %h4= user.name
+    .bio= user.bio

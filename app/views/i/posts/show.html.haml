@@ -4,6 +4,6 @@
   .content
     = render "bio", user: @user
     .article
-      .header
+      .post-header
         %h1= @post.title
       = raw @parsed.html_safe

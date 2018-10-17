@@ -5,9 +5,9 @@
     = render "bio", user: @user
 
   .posts
-    - @posts.published.each do |post|
-      .content
+    .content
+      - @posts.published.each do |post|
         .post
           .date
-            = post.published&.strftime("%m/%d/%Y")
+            = post.published&.strftime("%B #{post.published&.day&.ordinalize}, %Y")
           = link_to(post.title, "#{@user.username}/#{post.id}")

@@ -12,15 +12,31 @@
     display: flex;
     justify-content: space-between;
   }
+}
 
-  .posts {
+.posts {
+  .media-body {
+    margin-bottom: 20px
+  }
 
-    .media-body {
-      margin-bottom: 20px
+  ul {
+    list-style: none;
+  }
+
+  .post {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    font-size: 25px;
+
+    .date {
+      font-size: 14px;
     }
 
-    ul {
-      list-style: none;
+    a {
+      color: black;
     }
   }
 }

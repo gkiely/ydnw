@@ -4,21 +4,20 @@
 
 .page {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  background-color: white;
+  min-height: 100vh;
 
   &.index {
     flex-direction: column;
   }
 
   .content {
-    margin-top: 40px;
     background-color: white;
     padding: 20px;
     display: flex;
     flex-direction: column;
     width: 800px;
-    box-shadow: 0 1px 1px 0 rgba(11, 13, 39, 0.07), 0 2px 4px 0 rgba(9, 12, 36, 0.11);
-    border-radius: 5px;
 
     img, span {
       height: auto !important;
@@ -36,15 +35,18 @@
     .index-bio {
       display: flex;
       justify-content: space-between;
+      margin-top: 30px;
+      margin-bottom: 40px;
 
       img {
         border-radius: 50%;
       }
 
-      .index-bio__right {
+      .index-bio__left {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-right: 20px;
 
         img {
           margin-bottom: 10px;
@@ -78,7 +80,7 @@
     }
 
     .article {
-      .header {
+      .post-header {
         margin-bottom: 20px;
       }
     }

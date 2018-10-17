@@ -1,13 +1,13 @@
 - logo_path = current_user ? user_root_path : root_path
 
 %header.header
-  .container-lrg
+  .container-lrg.header
     .flex.col-12.spread
-      = link_to("YDNW", logo_path, class: "logo primary-color logo")
+      = link_to("Create A Blog With Google Docs", logo_path)
       - if current_user
         .links
           = link_to("My Blog", "/#{current_user.username}")
           = link_to("Dashboard", user_root_path)
           = link_to("Sign Out", destroy_user_session_path, method: :delete)
       - else
-        = link_to("Sign In", new_user_session_path, class: "nav-link secondary-color mr0")
+        = link_to("Sign In", new_user_session_path)
