@@ -10,4 +10,4 @@
         .post
           .date
             = post.published&.strftime("%B #{post.published&.day&.ordinalize}, %Y")
-          = link_to(post.title, "#{@user.username}/#{post.id}")
+          = link_to(post.title, "#{@user.username}/#{post.slug}")
