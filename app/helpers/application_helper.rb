@@ -26,6 +26,14 @@ module ApplicationHelper
         published_time: post.published&.to_time&.iso8601,
         modified_time: post.published&.to_time&.iso8601,
         author: post.user.name
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: post.user.twitter,
+        title: post.title,
+        description: description.strip,
+        creator: post.user.twitter,
+        image: [{ _: img}]
       }
     )
   end

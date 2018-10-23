@@ -15,7 +15,7 @@ class I::PostsController < ApplicationController
     @parsed = Nokogiri::HTML::DocumentFragment.parse(html).to_html
     to_parse = Nokogiri::HTML(@parsed)
     @parsed = parse_links(to_parse)
-    @text_of_post = to_parse.text
+    @text_of_post = helpers.truncate(helpers.strip_tags(to_parse.to_s), length: 290)
     @first_img_path = to_parse.xpath('//img')&.first&.attr('src')
   end
 
