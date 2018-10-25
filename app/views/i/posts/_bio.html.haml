@@ -7,9 +7,7 @@
       = link_to "https://twitter.com/#{user.twitter}" do
         = fa_icon "twitter"
   .index-bio__right
-    - if current_user && user.name.blank?
-      .tip
-        Edit your bio
-        = link_to("here.", profile_path)
     %h4= user.name
     .bio= user.bio
+    - if editable?(user)
+      .edit= link_to("edit", profile_path)

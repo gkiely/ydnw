@@ -23,20 +23,46 @@
     list-style: none;
   }
 
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 10px;
+
+    .nav-left {
+      display: flex;
+    }
+
+    .nav-item {
+      margin-right: 10px;
+    }
+  }
+
   .post {
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 10px;
-    font-size: 25px;
 
-    .date {
-      font-size: 14px;
+    .post-top {
+      font-size: 25px;
+
+      .date {
+        font-size: 14px;
+      }
+
+      a {
+        color: black;
+      }
     }
 
-    a {
-      color: black;
+    .post-bottom {
+      font-size: 14px;
+
+      a {
+        margin-right: 10px;
+      }
     }
   }
 }

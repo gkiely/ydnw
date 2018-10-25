@@ -1,13 +1,26 @@
-.profile
-  %h4 Edit Post
-  = form_tag(post_path(@post), method: "PATCH") do
-    .form-group
-      = label_tag(:title, "Title")
-      = text_field(:post, :title, class: "form-control")
-    .form-group
-      = label_tag(:date, "Date")
-      = date_field(:post, :published, class: "form-control")
-    .form-group
-      = label_tag(:date, "Published")
-      = check_box(:post, :is_published, class: "form-control")
-    = submit_tag("Update", class: "btn btn-primary")
+.page.edit
+  .upper-nav
+    - if params[:doc]
+      = link_to "Back To Edit Details", edit_post_path(@post)
+      = link_to "View Draft", "/#{current_user.username}/#{@post.slug}", target: "_blank"
+      = link_to "Pop Out Google Doc", "https://docs.google.com/document/d/#{@post.google_doc}/edit", target: "_blank"
+    - else
+      = link_to "Google Doc", edit_post_path(@post, doc: true)
+  - if params[:doc]
+    .gdoc-editor
+      %iframe{:src => "https://docs.google.com/document/d/#{@post.google_doc}/edit"}
+  - else
+    .content
+      .profile
+        = form_tag(post_path(@post), method: "PATCH") do
+          .form-special
+            .form-group
+              = label_tag(:title, "Title")
+              = text_field(:post, :title, class: "form-control")
+            .form-group
+              = label_tag(:date, "Date")
+              = date_field(:post, :published, class: "form-control")
+            .form-group
+              = label_tag(:date, "Published")
+              = check_box(:post, :is_published, class: "form-control")
+          = submit_tag("Update", class: "btn btn-primary")

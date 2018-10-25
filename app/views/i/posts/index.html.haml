@@ -6,8 +6,24 @@
 
   .posts
     .content
-      - @posts.published.each do |post|
+      - if editable?(@user)
+        .nav
+          .nav-left
+            - if params[:drafts]
+              .nav-item= link_to "Published", "/#{current_user.username}"
+              .nav-item Drafts (#{current_user.posts.draft.count})
+            - else
+              .nav-item Published
+              .nav-item= link_to "Drafts (#{current_user.posts.draft.count})", "/#{current_user.username}?drafts=true"
+          .nav-right
+            = link_to("👉 New Blog Post", posts_path, method: :post)
+      - @posts.each do |post|
         .post
-          .date
-            = post.published&.strftime("%B #{post.published&.day&.ordinalize}, %Y")
-          = link_to(post.title, "#{@user.username}/#{post.slug}")
+          .post-top
+            .date
+              = post.published&.strftime("%B #{post.published&.day&.ordinalize}, %Y")
+            = link_to(post.title, "/#{@user.username}/#{post.slug}")
+          - if editable?(@user)
+            .post-bottom
+              = link_to "Edit Post", edit_post_path(post, doc: true)
+              = link_to "Delete Post", post_path(post), method: :delete

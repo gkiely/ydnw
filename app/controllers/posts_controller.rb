@@ -4,14 +4,13 @@ class PostsController < ApplicationController
   def create
     file = GoogleDrive.new(current_user).create_file!
 
-    current_user.posts.create(
+    post = current_user.posts.create(
       title: "My new post.",
       google_doc: file.id,
-      published: Date.today,
-      is_published: true
+      published: Date.today
     )
 
-    redirect_to user_root_path
+    redirect_to edit_post_path(post, doc: true)
   end
 
   def show

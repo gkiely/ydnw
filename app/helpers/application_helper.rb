@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def editable?(user)
+    current_user && current_user == user
+  end
+
   def set_home_meta_tags
     set_meta_tags(
       title: "You Don't Need WordPress: Create A Blog With Google Docs",

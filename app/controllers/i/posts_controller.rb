@@ -1,9 +1,14 @@
 class I::PostsController < ApplicationController
   def index
+    redirect_to google_drive_authorize_path if current_user && current_user.google_auth_token.nil?
     @user = User.find_by(username: params[:username])
     return redirect_to root_path unless @user
 
-    @posts = @user.posts.most_recent_first
+    if params[:drafts]
+      @posts = @user.posts.draft.most_recent_first
+    else
+      @posts = @user.posts.published.most_recent_first
+    end
   end
 
   def show

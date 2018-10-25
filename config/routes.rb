@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
 
-  resource :dashboard, only: [:show], controller: 'dashboard', :as => 'user_root'
   resource :profile, only: [:show], controller: 'profile'
+  resource :dashboard, only: [:show], controller: 'dashboard', :as => 'user_root'
 
   resources :posts
 
