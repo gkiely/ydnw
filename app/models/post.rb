@@ -4,6 +4,9 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
+  has_attached_file :meta, styles: { medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :meta, content_type: /\Aimage\/.*\z/
+
   scope :published, -> { where(is_published: true) }
   scope :draft, -> { where(is_published: false) }
   scope :most_recent_first, -> { order(published: :desc) }

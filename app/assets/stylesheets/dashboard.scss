@@ -46,10 +46,20 @@
     margin-bottom: 10px;
 
     .post-top {
+      display: flex;
+      flex-direction: column;
       font-size: 25px;
 
       .date {
         font-size: 14px;
+      }
+
+      .post-meta {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        max-width: 500px;
+        height: 200px;
+        background-size: cover;
       }
 
       a {

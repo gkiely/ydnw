@@ -1,3 +1,5 @@
+require "open-uri"
+
 class PostsController < ApplicationController
   before_action :authenticate_user!
 
@@ -23,6 +25,15 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.friendly.find(params[:id])
+
+    html = GoogleDrive.new(current_user).get_html(@post)
+    @parsed = Nokogiri::HTML::DocumentFragment.parse(html).to_html
+    to_parse = Nokogiri::HTML(@parsed)
+    @first_img_path = to_parse.xpath('//img')&.first&.attr('src')
+
+    if @first_img_path
+      @post.update(meta: open(@first_img_path))
+    end
 
     if @post.update(post_params.merge(slug: nil))
       flash[:success] = "Post updated!"

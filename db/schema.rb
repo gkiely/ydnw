@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_19_163208) do
+ActiveRecord::Schema.define(version: 2018_10_26_192329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 2018_10_19_163208) do
     t.string "google_doc"
     t.boolean "is_published", default: false
     t.string "slug"
+    t.string "meta_file_name"
+    t.string "meta_content_type"
+    t.integer "meta_file_size"
+    t.datetime "meta_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
