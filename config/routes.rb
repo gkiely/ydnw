@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  constraints(subdomain: 'patwalls') do
+    root "i/posts#index", as: 'subdomain_blog_index'
+    get '/:post_id', to: 'i/posts#show', as: 'subdomain_blog_show'
+  end
+
   root 'welcome#index'
 
   resource :profile, only: [:show], controller: 'profile'
@@ -14,6 +20,6 @@ Rails.application.routes.draw do
   get '/privacy_policy' => 'privacy_policy#show'
   get '/waitlist' => 'waitlist#show'
 
-  get '/:username', to: 'i/posts#index'
-  get '/:username/:post_id', to: 'i/posts#show'
+  get '/:username', to: 'i/posts#index', as: 'blog_index'
+  get '/:username/:post_id', to: 'i/posts#show', as: 'blog_show'
 end

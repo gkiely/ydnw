@@ -1,7 +1,7 @@
 class I::PostsController < ApplicationController
   def index
     redirect_to google_drive_authorize_path if current_user && current_user.google_auth_token.nil?
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(username: subdomain_or_param)
     return redirect_to root_path unless @user
 
     if params[:drafts]
@@ -12,7 +12,7 @@ class I::PostsController < ApplicationController
   end
 
   def show
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(username: subdomain_or_param)
     return redirect_to root_path unless @user
 
     @post = @user.posts.friendly.find(params[:post_id])
@@ -25,6 +25,10 @@ class I::PostsController < ApplicationController
   end
 
   private
+
+  def subdomain_or_param
+    request.subdomain.present? ? request.subdomain : params[:username]
+  end
 
   def parse_links(doc)
     doc.css('a').each do |link|
