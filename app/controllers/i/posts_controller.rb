@@ -27,7 +27,7 @@ class I::PostsController < ApplicationController
   private
 
   def subdomain_or_param
-    request.subdomain.present? ? request.subdomain : params[:username]
+    (request.subdomain.present? && request.subdomain != "www") ? request.subdomain : params[:username]
   end
 
   def parse_links(doc)
