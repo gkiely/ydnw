@@ -10,4 +10,8 @@ class Post < ApplicationRecord
   scope :published, -> { where(is_published: true) }
   scope :draft, -> { where(is_published: false) }
   scope :most_recent_first, -> { order(published: :desc) }
+
+  def should_generate_new_friendly_id?
+    (slug.blank? || self.title_changed?) && !self.is_published
+  end
 end

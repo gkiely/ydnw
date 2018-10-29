@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   resource :profile, only: [:show], controller: 'profile'
   resource :dashboard, only: [:show], controller: 'dashboard', :as => 'user_root'
 
-  resources :posts
+  resources :posts do
+    post :publish
+    post :unpublish
+  end
 
   resources :users, only: [:update]
 

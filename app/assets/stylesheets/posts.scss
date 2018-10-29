@@ -14,20 +14,44 @@
 
   .upper-nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    padding: 5px;
 
-    a {
-      margin-right: 10px;
-      background-color: gray;
-      padding: 5px;
-      background-color: rgba(0,0,0,0.12);
-      margin-top: 10px;
-      border-radius: 2px;
-      text-transform: uppercase;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
+    .nav-left {
+      .title {
+        width: 300px;
+      }
+
+      .date {
+        width: 200px;
+      }
+
+      .btn-primary {
+        margin-left: 5px;
+      }
     }
+
+    .nav-right {
+      display: flex;
+      justify-content: flex-end;
+
+      .publish {
+        margin-left: 5px;
+      }
+    }
+
+    // a {
+    //   margin-right: 10px;
+    //   background-color: gray;
+    //   padding: 5px;
+    //   background-color: rgba(0,0,0,0.12);
+    //   margin-top: 10px;
+    //   border-radius: 2px;
+    //   text-transform: uppercase;
+    //   color: white;
+    //   text-decoration: none;
+    //   font-weight: 600;
+    // }
   }
 
   &.edit {

@@ -27,5 +27,5 @@
             = link_to(post.title, "/#{@user.username}/#{post.slug}")
           - if editable?(@user)
             .post-bottom
-              = link_to "Edit Post", edit_post_path(post, doc: true)
+              = link_to "Edit Post", edit_post_path(post.id)
               = link_to "Delete Post", post_path(post), method: :delete

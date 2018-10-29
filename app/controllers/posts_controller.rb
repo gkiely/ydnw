@@ -35,7 +35,7 @@ class PostsController < ApplicationController
       @post.update(meta: open(@first_img_path))
     end
 
-    if @post.update(post_params.merge(slug: nil))
+    if @post.update(post_params)
       flash[:success] = "Post updated!"
       redirect_to edit_post_path(@post.id)
     else
@@ -49,6 +49,30 @@ class PostsController < ApplicationController
 
     if @post.destroy!
       flash[:success] = "Post updated!"
+      redirect_to user_root_path
+    else
+      flash[:error] = "something went wrong"
+      redirect_to user_root_path
+    end
+  end
+
+  def publish
+    @post = Post.friendly.find(params[:post_id])
+
+    if @post.update!(is_published: true)
+      flash[:success] = "Post published!"
+      redirect_to user_root_path
+    else
+      flash[:error] = "something went wrong"
+      redirect_to user_root_path
+    end
+  end
+
+  def unpublish
+    @post = Post.friendly.find(params[:post_id])
+
+    if @post.update!(is_published: false)
+      flash[:success] = "Post unpublished."
       redirect_to user_root_path
     else
       flash[:error] = "something went wrong"
