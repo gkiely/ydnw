@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  constraints(subdomain: 'patwalls') do
+  constraints(subdomain: 'patwalls.co') do
     root "i/posts#index", as: 'subdomain_blog_index'
     get '/:post_id', to: 'i/posts#show', as: 'subdomain_blog_show'
   end
