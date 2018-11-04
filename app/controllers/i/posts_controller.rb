@@ -31,7 +31,7 @@ class I::PostsController < ApplicationController
     logger.debug "-----------------"
     logger.debug "-----------------"
     logger.debug "-----------------"
-    logger.debug request.subdomain
+    logger.debug request.host
     logger.debug "-----------------"
     logger.debug "-----------------"
     logger.debug "-----------------"
