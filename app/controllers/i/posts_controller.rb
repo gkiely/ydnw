@@ -1,7 +1,12 @@
 class I::PostsController < ApplicationController
   def index
+    logger.debug "---------"
+    logger.debug "---------"
+    logger.debug request.host
+    logger.debug "---------"
+    logger.debug "---------"
     redirect_to google_drive_authorize_path if current_user && current_user.google_auth_token.nil?
-    @user = User.find_by(username: subdomain_or_param)
+    @user = User.find_by(username: host_or_param)
     return redirect_to root_path unless @user
 
     if params[:drafts]
@@ -12,7 +17,7 @@ class I::PostsController < ApplicationController
   end
 
   def show
-    @user = User.find_by(username: subdomain_or_param)
+    @user = User.find_by(username: host_or_param)
     return redirect_to root_path unless @user
 
     @post = @user.posts.friendly.find(params[:post_id])
@@ -27,16 +32,11 @@ class I::PostsController < ApplicationController
   private
 
   def subdomain_or_param
-    logger.debug "-----------------"
-    logger.debug "-----------------"
-    logger.debug "-----------------"
-    logger.debug "-----------------"
-    logger.debug request.host
-    logger.debug "-----------------"
-    logger.debug "-----------------"
-    logger.debug "-----------------"
-    logger.debug "-----------------"
-    (request.subdomain.present? && request.subdomain != "www") ? User::DOMAIN_MAPPING[request.subdomain] : params[:username]
+    (request.subdomain.present? && request.subdomain != "www") ? request.subdomain : params[:username]
+  end
+
+  def host_or_param
+    (request.host.present? && request.host != "localhost" && request.host != "youdontneedwp.com" && request.host != "www.youdontneedwp.com") ? User::DOMAIN_MAPPING[request.host] : params[:username]
   end
 
   def parse_links(doc)

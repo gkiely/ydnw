@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  constraints(subdomain: 'patwalls.co') do
+  constraints(subdomain: 'patwalls') do
     root "i/posts#index", as: 'subdomain_blog_index'
     get '/:post_id', to: 'i/posts#show', as: 'subdomain_blog_show'
+  end
+
+  constraints(host: 'patwalls.co') do
+    root "i/posts#index", as: 'host_blog_index'
+    get '/:post_id', to: 'i/posts#show', as: 'host_blog_show'
   end
 
   root 'welcome#index'
