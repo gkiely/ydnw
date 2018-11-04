@@ -27,6 +27,15 @@ class I::PostsController < ApplicationController
   private
 
   def subdomain_or_param
+    puts "-----------------"
+    puts "-----------------"
+    puts "-----------------"
+    puts "-----------------"
+    puts request.subdomain
+    puts "-----------------"
+    puts "-----------------"
+    puts "-----------------"
+    puts "-----------------"
     (request.subdomain.present? && request.subdomain != "www") ? User::DOMAIN_MAPPING[request.subdomain] : params[:username]
   end
 
