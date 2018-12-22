@@ -24,7 +24,7 @@
             js.src = "https://makerwidget.com/js/embed.js";
             fjs.parentNode.insertBefore(js, fjs)
         }(document, "script", "dhm"))
-    - if true
+    - if Rails.env.production?
       %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-75503228-5"}
       :javascript
         window.dataLayer = window.dataLayer || [];
