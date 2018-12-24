@@ -1,5 +1,8 @@
 - set_meta_tags_for_index(@user)
 
+- content_for :customized_emoji do
+  %link{:href => customized_emoji(@user), :rel => "icon"}
+
 .page.index
   .content
     = render "bio", user: @user

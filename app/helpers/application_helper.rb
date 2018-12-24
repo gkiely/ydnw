@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def customized_emoji(user)
+    user.favicon.present? ? user.favicon : "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/writing-hand_270d.png"
+  end
+
   def editable?(user)
     current_user && current_user == user
   end

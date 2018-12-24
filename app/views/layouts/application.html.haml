@@ -10,6 +10,10 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    - if content_for? :customized_emoji
+      = yield :customized_emoji
+    - else
+      %link{:href => "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/writing-hand_270d.png", :rel => "icon"}
     - if current_user
       :javascript
         (function(d, h, m){

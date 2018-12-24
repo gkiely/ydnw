@@ -1,3 +1,6 @@
+- content_for :customized_emoji do
+  %link{:href => customized_emoji(current_user), :rel => "icon"}
+
 .page
   .content
     .profile
@@ -7,15 +10,18 @@
           = label_tag(:user, "Name")
           = text_field(:user, :name, class: "form-control", value: current_user.name)
         .form-group
-          = label_tag(:user, "Username")
+          = label_tag(:user, "Username (URL)")
           = text_field(:user, :username, class: "form-control", value: current_user.username)
         .form-group
           = label_tag(:user, "Bio")
           = text_field(:user, :bio, class: "form-control", value: current_user.bio)
         .form-group
           = label_tag(:user, "Twitter")
-          = text_field(:user, :twitter, class: "form-control", value: current_user.twitter)
+          = text_field(:user, :twitter, class: "form-control", value: current_user.twitter, placeholder: "thepatwalls")
         .form-group
           = label_tag(:user, "Instagram")
-          = text_field(:user, :instagram, class: "form-control", value: current_user.instagram)
+          = text_field(:user, :instagram, class: "form-control", value: current_user.instagram, placeholder: "pswalls")
+        .form-group
+          = label_tag(:user, "Icon (favicon)")
+          = text_field(:user, :favicon, class: "form-control", value: current_user.favicon, placeholder: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/clapper-board_1f3ac.png")
         = submit_tag("Update Profile", class: "btn btn-primary")
