@@ -2,26 +2,34 @@
   %link{:href => customized_emoji(current_user), :rel => "icon"}
 
 .page
-  .content
+  .regular-container
     .profile
       %h4 Edit Profile
-      = form_tag(user_path(current_user), method: "PATCH") do
-        .form-group
-          = label_tag(:user, "Name")
-          = text_field(:user, :name, class: "form-control", value: current_user.name)
-        .form-group
-          = label_tag(:user, "Username (URL)")
-          = text_field(:user, :username, class: "form-control", value: current_user.username)
-        .form-group
-          = label_tag(:user, "Bio")
-          = text_field(:user, :bio, class: "form-control", value: current_user.bio)
-        .form-group
-          = label_tag(:user, "Twitter")
-          = text_field(:user, :twitter, class: "form-control", value: current_user.twitter, placeholder: "thepatwalls")
-        .form-group
-          = label_tag(:user, "Instagram")
-          = text_field(:user, :instagram, class: "form-control", value: current_user.instagram, placeholder: "pswalls")
-        .form-group
-          = label_tag(:user, "Icon (favicon)")
-          = text_field(:user, :favicon, class: "form-control", value: current_user.favicon, placeholder: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/clapper-board_1f3ac.png")
+      = form_for(@user, url: user_path(@user), html: { multipart: true }, method: "PATCH") do |f|
+        = f.fields_for :user do
+          .form-group
+            = label_tag("Name")
+            = f.text_field(:name, class: "form-control", value: current_user.name)
+          .form-group
+            = label_tag("Username (URL)")
+            = f.text_field(:username, class: "form-control", value: current_user.username)
+          .form-group
+            = label_tag("Bio")
+            = f.text_field(:bio, class: "form-control", value: current_user.bio)
+          .form-group
+            = label_tag("Twitter")
+            = f.text_field(:twitter, class: "form-control", value: current_user.twitter, placeholder: "thepatwalls")
+          .form-group
+            = label_tag("Instagram")
+            = f.text_field(:instagram, class: "form-control", value: current_user.instagram, placeholder: "pswalls")
+          .form-group
+            = label_tag("Avatar")
+            = f.file_field(:avatar, class: "form-control-file")
+            - if current_user.avatar
+              Current avatar:
+              %br
+              = image_tag(current_user.avatar.url, height: "100")
+          .form-group
+            = label_tag("Page icon (favicon)")
+            = f.text_field(:favicon, class: "form-control", value: current_user.favicon, placeholder: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/clapper-board_1f3ac.png")
         = submit_tag("Update Profile", class: "btn btn-primary")

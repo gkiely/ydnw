@@ -1,6 +1,9 @@
 .index-bio
   .index-bio__left
-    = image_tag(Avatar.new(user.email).get&.gsub(/\/s\d+/, '/s128'))
+    - if user.avatar.present?
+      = image_tag(user.avatar.url)
+    - else
+      = image_tag(Avatar.new(user.email).get&.gsub(/\/s\d+/, '/s128'))
     - if user.instagram.present?
       = link_to "https://instagram.com/#{user.instagram}" do
         = fa_icon "instagram"

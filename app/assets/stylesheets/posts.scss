@@ -71,6 +71,24 @@
     }
   }
 
+  .regular-container {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    // width: 800px;
+
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+
+    .dashboard {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   .content {
     background-color: white;
     padding: 20px;
