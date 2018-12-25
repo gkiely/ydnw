@@ -20,11 +20,20 @@
 	text-rendering: optimizeLegibility;
 }
 .header {
-  text-transform: uppercase;
+  background-color: white;
+  display: flex;
+  justify-content: center;
 
   .container-lrg {
     margin: 0;
     max-width: none;
+    width: 800px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 400px) {
+      width: 95%;
+    }
   }
   a {
     color: rgba(0,0,0,.54);
