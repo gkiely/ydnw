@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.lighter {
+  color: rgba(0, 0, 0, 0.54);
+}
+
 .page {
   display: flex;
   justify-content: flex-start;

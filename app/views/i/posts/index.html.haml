@@ -23,7 +23,7 @@
       - @posts.each do |post|
         .post
           .post-top
-            .date
+            .date.lighter
               = post.published&.strftime("%B #{post.published&.day&.ordinalize}, %Y")
             - if post.meta.exists?
               .post-meta{ style: "background-image: url(#{post.meta.url})"}

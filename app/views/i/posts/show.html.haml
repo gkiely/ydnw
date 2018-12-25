@@ -8,5 +8,7 @@
     = render "bio", user: @user
     .article
       .post-header
+        - if @post.published.present?
+          %time.lighter{ datetime: @post.published }= @post.published&.strftime("%B #{@post.published.day.ordinalize}, %Y")
         %h1= @post.title
       = raw @parsed.html_safe
