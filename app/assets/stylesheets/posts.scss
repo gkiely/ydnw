@@ -122,11 +122,23 @@
         border-radius: 50%;
       }
 
+      .index-bio__right {
+        .name {
+          font-size: 24px;
+
+          a {
+            color: black;
+          }
+        }
+
+      }
+
       .index-bio__left {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-right: 20px;
+        width: 100px;
 
         img {
           margin-bottom: 10px;
