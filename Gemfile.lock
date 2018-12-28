@@ -804,6 +804,7 @@ GEM
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.5)
+    rack-cors (1.0.2)
     rack-protection (2.0.4)
       rack
     rack-test (1.1.0)
@@ -955,6 +956,7 @@ DEPENDENCIES
   paperclip (~> 6.0.0)
   pg
   puma (~> 3.11)
+  rack-cors
   rails (~> 5.2.0)
   rest-client
   sass-rails (~> 5.0)

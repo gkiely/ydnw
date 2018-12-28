@@ -12,3 +12,24 @@
           %time.lighter{ datetime: @post.published }= @post.published&.strftime("%B #{@post.published.day.ordinalize}, %Y")
         %h1= @post.title
       = raw @parsed.html_safe
+
+:javascript
+  $(".article a").each(function() {
+    var node = this;
+
+    if (this.text === "embed:tweet") {
+      $.ajax({
+        url: `https://publish.twitter.com/oembed?url=${node.href}`,
+        type: "GET",
+        dataType: "jsonp",
+        success: function (response) {
+          var nodeToReplace = $(node)
+          nodeToReplace.parent().append($(response.html))
+          nodeToReplace.remove()
+        },
+        error: function (xhr, status) {
+            console.log("error");
+        }
+      });
+    }
+  });
