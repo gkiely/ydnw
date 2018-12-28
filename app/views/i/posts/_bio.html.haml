@@ -12,7 +12,7 @@
         = fa_icon "twitter"
   .index-bio__right
     .name
-      = link_to user.name, "/#{current_user.username}"
+      = link_to user.name, "/#{user.username}"
     .bio= user.bio
     - if editable?(user)
       .edit= link_to("edit bio", profile_path)
