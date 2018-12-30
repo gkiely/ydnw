@@ -24,7 +24,7 @@
         dataType: "jsonp",
         success: function (response) {
           var nodeToReplace = $(node)
-          nodeToReplace.parent().append($(response.html))
+          nodeToReplace.parent().append($("<div class='embed'>" + response.html + "</div>"))
           nodeToReplace.remove()
         },
         error: function (xhr, status) {
