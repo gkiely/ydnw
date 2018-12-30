@@ -4,7 +4,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
-  has_attached_file :meta, styles: { medium: "300x300>", thumb: "100x100>" }
+  has_attached_file :meta, styles: { medium: "300x300>", thumb: "100x100>" }, s3_protocol: :https
   validates_attachment_content_type :meta, content_type: /\Aimage\/.*\z/
 
   scope :published, -> { where(is_published: true) }
