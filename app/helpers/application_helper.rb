@@ -19,7 +19,9 @@ module ApplicationHelper
     )
   end
 
-  def set_meta_tags_for_post(post, description, img)
+  def set_meta_tags_for_post(post, description)
+    img = post.meta&.url
+
     set_meta_tags(
       title: post.title,
       description: description,
