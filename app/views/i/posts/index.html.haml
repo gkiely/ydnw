@@ -27,7 +27,7 @@
               = post.published&.strftime("%B #{post.published&.day&.ordinalize}, %Y")
             - if post.meta.exists?
               .post-meta{ style: "background-image: url(#{post.meta.url})"}
-            = link_to(post.title, "/#{@user.username}/#{post.slug}")
+            = link_to(post.title, post_pathy(post))
           - if editable?(@user)
             .post-bottom
               = link_to "Edit Post", edit_post_path(post.id)

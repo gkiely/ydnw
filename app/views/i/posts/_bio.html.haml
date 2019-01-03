@@ -1,6 +1,8 @@
+- home = custom_domain? ? "/" : "/#{user.username}"
+
 .index-bio
   .index-bio__left
-    = link_to "/#{user.username}" do
+    = link_to home do
       - if user.avatar.present?
         = image_tag(user.avatar.url)
       - else
@@ -12,7 +14,7 @@
         = fa_icon "twitter"
   .index-bio__right
     .name
-      = link_to user.name, "/#{user.username}"
+      = link_to user.name, home
     .bio= user.bio
     - if editable?(user)
       .edit= link_to("edit bio", profile_path)

@@ -3,8 +3,16 @@ module ApplicationHelper
     user.favicon.present? ? user.favicon : "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/writing-hand_270d.png"
   end
 
+  def post_pathy(post)
+    custom_domain? ? "/#{post.slug}" : "/#{post.user.username}/#{post.slug}"
+  end
+
   def editable?(user)
     current_user && current_user == user
+  end
+
+  def custom_domain?
+    request.host.present? && request.host != "localhost" && request.host != "youdontneedwp.com" && request.host != "www.youdontneedwp.com"
   end
 
   def set_home_meta_tags
