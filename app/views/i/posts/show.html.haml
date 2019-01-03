@@ -12,6 +12,10 @@
           %time.lighter{ datetime: @post.published }= @post.published&.strftime("%B #{@post.published.day.ordinalize}, %Y")
         %h1= @post.title
       = raw @parsed.html_safe
+      .cta{ style: "color: #666666; margin-top: 20px;"}
+        %i
+          This blog post is actually just a Google Doc!
+          = link_to "Create your own blog with Google Docs, in less than a minute.", "https://youdontneedwp.com"
 
 :javascript
   $(".article a").each(function() {
