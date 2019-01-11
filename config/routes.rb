@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
+  get "/open", to: "welcome#open"
 
   resource :profile, only: [:show], controller: 'profile'
   resource :dashboard, only: [:show], controller: 'dashboard', :as => 'user_root'

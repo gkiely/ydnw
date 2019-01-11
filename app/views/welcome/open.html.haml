@@ -1,0 +1,35 @@
+- set_meta_tags(title: "Starter Story is an Open Startup")
+
+%head
+  %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"}
+
+
+%h2.question Users
+.answer
+  %canvas#myChart
+
+:javascript
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'line',
+
+      // The data for our dataset
+      data: {
+          labels: #{raw @days},
+          datasets: [{
+              label: "Users Added",
+              backgroundColor: 'transparent',
+              borderColor: 'red',
+              data: #{@values},
+          },{
+              label: "Users That Authed",
+              backgroundColor: 'transparent',
+              borderColor: 'blue',
+              data: #{@authed_values},
+          }]
+      },
+
+      // Configuration options go here
+      options: {}
+  });
