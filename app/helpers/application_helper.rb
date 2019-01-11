@@ -29,6 +29,7 @@ module ApplicationHelper
 
   def set_meta_tags_for_post(post, description)
     img = post.meta&.url
+    url = custom_domain? ? "https://#{request.host}/#{post.id}" : "https://www.youdontneedwp.com/#{post.user.username}/#{post.id}"
 
     set_meta_tags(
       title: post.title,
@@ -36,7 +37,7 @@ module ApplicationHelper
       og: {
         title: post.title,
         description: post.title,
-        url: "https://www.youdontneedwp.com/#{post.user.username}/#{post.id}",
+        url: url,
         type: "article",
         image: [{ _: img}]
       },
@@ -57,13 +58,17 @@ module ApplicationHelper
   end
 
   def set_meta_tags_for_index(user)
+    title = custom_domain? ? "#{user.name}" : "#{user.name} - You Don't Need WordPress"
+    description = user.bio.present? ? user.bio : "Check out posts by #{user.name}"
+    url = custom_domain? ? "https://#{request.host}" : "https://www.youdontneedwp.com/#{user.username}"
+
     set_meta_tags(
-      title: "#{user.name} - You Don't Need WordPress",
-      description: "Check out posts by #{user.name}",
+      title: title,
+      description: description,
       og: {
-        title: "#{user.name} - You Don't Need WordPress",
-        description: "Check out posts by #{user.name}",
-        url: "https://www.youdontneedwp.com/#{user.username}"
+        title: title,
+        description: description,
+        url: url
       }
     )
   end
