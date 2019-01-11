@@ -8,6 +8,14 @@
 .answer
   %canvas#myChart
 
+%h2.question Posts
+.answer
+  %canvas#myChart2
+
+%h2.question Published Posts
+.answer
+  %canvas#myChart3
+
 :javascript
   var ctx = document.getElementById('myChart').getContext('2d');
   var chart = new Chart(ctx, {
@@ -19,14 +27,49 @@
           labels: #{raw @days},
           datasets: [{
               label: "Users Added",
-              backgroundColor: 'transparent',
-              borderColor: 'red',
+              backgroundColor: 'black',
+              borderColor: 'black',
               data: #{@values},
-          },{
-              label: "Users That Authed",
-              backgroundColor: 'transparent',
-              borderColor: 'blue',
-              data: #{@authed_values},
+          }]
+      },
+
+      // Configuration options go here
+      options: {}
+  });
+
+  var ctx = document.getElementById('myChart2').getContext('2d');
+  var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'line',
+
+      // The data for our dataset
+      data: {
+          labels: #{raw @posts_days},
+          datasets: [{
+              label: "Posts",
+              backgroundColor: 'black',
+              borderColor: 'black',
+              data: #{@posts_values},
+          }]
+      },
+
+      // Configuration options go here
+      options: {}
+  });
+
+  var ctx = document.getElementById('myChart3').getContext('2d');
+  var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'line',
+
+      // The data for our dataset
+      data: {
+          labels: #{raw @published_posts_days},
+          datasets: [{
+              label: "Published Posts",
+              backgroundColor: 'black',
+              borderColor: 'black',
+              data: #{@published_posts_values},
           }]
       },
 
