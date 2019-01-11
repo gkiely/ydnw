@@ -4,15 +4,12 @@
   %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"}
 
 
-%h2.question Users
 .answer
   %canvas#myChart
 
-%h2.question Posts
 .answer
   %canvas#myChart2
 
-%h2.question Published Posts
 .answer
   %canvas#myChart3
 
@@ -46,7 +43,7 @@
       data: {
           labels: #{raw @posts_days},
           datasets: [{
-              label: "Posts",
+              label: "Posts created",
               backgroundColor: 'black',
               borderColor: 'black',
               data: #{@posts_values},
@@ -66,7 +63,7 @@
       data: {
           labels: #{raw @published_posts_days},
           datasets: [{
-              label: "Published Posts",
+              label: "Posts published",
               backgroundColor: 'black',
               borderColor: 'black',
               data: #{@published_posts_values},
