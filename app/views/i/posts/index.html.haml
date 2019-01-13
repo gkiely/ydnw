@@ -26,7 +26,8 @@
             .date.lighter
               = post.published&.strftime("%B #{post.published&.day&.ordinalize}, %Y")
               - if post.meta.exists?
-                = image_tag(post.meta.url)
+                = link_to(post_pathy(post)) do
+                  = image_tag(post.meta.url)
             = link_to(post.title, post_pathy(post))
           - if editable?(@user)
             .post-bottom
