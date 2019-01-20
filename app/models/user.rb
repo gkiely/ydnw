@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   DOMAIN_MAPPING = {
-    "patwalls.co" => "patwalls"
+    "patwalls.co" => "patwalls",
+    "leeronisrael.com" => "leeronisrael"
   }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

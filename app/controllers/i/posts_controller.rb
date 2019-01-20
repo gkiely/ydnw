@@ -5,7 +5,9 @@ class I::PostsController < ApplicationController
     logger.debug request.host
     logger.debug "---------"
     logger.debug "---------"
+
     redirect_to google_drive_authorize_path if current_user && current_user.google_auth_token.nil?
+    
     @user = User.find_by(username: host_or_param)
     return redirect_to root_path unless @user
 

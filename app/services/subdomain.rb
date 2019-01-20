@@ -4,7 +4,6 @@ class Subdomain
   end
 
   def matches?(request)
-    byebug
     if request.subdomain.present? && request.subdomain != 'www'
       @users.find(request.subdomain)
     end
